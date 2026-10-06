@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Konaseema Cab Travels — Amalapuram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0d;--bg2:#131316;--card:#17171b;--text:#f4f1ea;--muted:#a8a49a;--gold:#d4af6a;--gold2:#f0d79b;--line:rgba(255,255,255,.09);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.15}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(14px + env(safe-area-inset-top,0px)) 0 14px;transition:.4s}
+nav.s{background:rgba(11,11,13,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:22px;letter-spacing:.5px}
+.logo b{color:var(--gold)}
+.links{display:flex;gap:30px;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--gold2)}
+.btn{display:inline-block;padding:14px 30px;border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1405;font-weight:600;font-size:14px;letter-spacing:.4px;transition:.3s;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(212,175,106,.35)}
+.btn.o{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.35)}
+.btn.o:hover{border-color:var(--gold);box-shadow:none}
+/* HERO background image */
+.hero{--hero-img:url("Wheels of India_ A Vector Tribute to Vintage Transport Icons.jpg");min-height:100vh;min-height:100svh;position:relative;display:flex;align-items:center;background:var(--hero-img) center/cover no-repeat;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,13,.88) 0%,rgba(11,11,13,.55) 55%,rgba(11,11,13,.25) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 30%);animation:zoom 22s ease-in-out infinite alternate}
+@keyframes zoom{to{transform:scale(1.06)}}
+.hero .wrap{position:relative;padding-top:110px;padding-bottom:90px}
+.tag{display:inline-block;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(212,175,106,.4);padding:8px 18px;border-radius:40px;margin-bottom:26px;backdrop-filter:blur(6px)}
+.hero h1{font-size:clamp(40px,7vw,84px);max-width:800px;margin-bottom:22px}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero p{max-width:540px;color:#d8d4ca;font-size:18px;font-weight:300;margin-bottom:38px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.stats{position:relative;z-index:2;margin-top:-60px}
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.stat{padding:30px 20px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border:0}
+.stat b{display:block;font-family:'Playfair Display',serif;font-size:38px;color:var(--gold)}
+.stat span{font-size:13px;color:var(--muted);letter-spacing:1px}
+section{padding:110px 0}
+.eyebrow{color:var(--gold);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+.title{font-size:clamp(30px,4.5vw,50px);margin-bottom:16px}
+.sub{color:var(--muted);max-width:560px;margin-bottom:56px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px 28px;transition:.4s}
+.card:hover{transform:translateY(-8px);border-color:rgba(212,175,106,.5);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(212,175,106,.12);font-size:24px;margin-bottom:20px}
+.card h3{font-size:22px;margin-bottom:10px}
+.card p{color:var(--muted);font-size:15px}
+.fleet{background:var(--bg2)}
+.car{display:flex;flex-direction:column;gap:6px}
+.car .price{margin-top:16px;color:var(--gold2);font-weight:600}
+.car .price small{color:var(--muted);font-weight:400}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:12px 22px;border:1px solid var(--line);border-radius:40px;background:var(--card);font-size:15px;transition:.3s}
+.chip:hover{border-color:var(--gold);color:var(--gold2);transform:translateY(-3px)}
+.chip i{font-style:normal;color:var(--gold);margin:0 8px}
+.book{background:radial-gradient(circle at 80% 20%,rgba(212,175,106,.12),transparent 50%),var(--bg2)}
+.book .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:36px;display:grid;gap:14px}
+input,select{width:100%;padding:15px 18px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;font-size:15px}
+input:focus,select:focus{outline:none;border-color:var(--gold)}
+.ct{margin-top:26px;color:var(--muted)}
+.ct b{color:var(--text);display:block;font-size:20px;font-family:'Playfair Display',serif}
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px;text-align:center}
+.wa{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;font-size:28px;box-shadow:0 8px 24px rgba(37,211,102,.45);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.rv{opacity:0;transform:translateY(36px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:820px){.links{display:none}.stats .grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.book .wrap{grid-template-columns:1fr}section{padding:80px 0}}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="wrap"><a class="logo" href="#">Konaseema <b>Cabs</b></a>
+<div class="links"><a href="#services">Services</a><a href="#fleet">Fleet</a><a href="#routes">Routes</a><a href="#book">Book</a></div>
+<a class="btn" href="tel:+910000000000">Call Now</a></div></nav>
+
+<header class="hero" id="hero">
+<div class="wrap">
+<span class="tag rv">Amalapuram · Konaseema</span>
+<h1 class="rv">Travel the Konaseema way — <em>in comfort &amp; style.</em></h1>
+<p class="rv">Premium cabs, trusted drivers and spotless cars for outstation trips, airport transfers, weddings and pilgrimages from Amalapuram.</p>
+<div class="cta rv"><a class="btn" href="#book">Book Your Ride</a><a class="btn o" href="#fleet">View Fleet</a></div>
+</div></header>
+
+<div class="stats"><div class="wrap"><div class="grid rv">
+<div class="stat"><b data-n="10">0</b><span>YEARS OF SERVICE</span></div>
+<div class="stat"><b data-n="5000">0</b><span>HAPPY TRIPS</span></div>
+<div class="stat"><b data-n="25">0</b><span>VERIFIED DRIVERS</span></div>
+<div class="stat"><b>24/7</b><span>ALWAYS AVAILABLE</span></div>
+</div></div></div>
+
+<section id="services"><div class="wrap">
+<p class="eyebrow rv">What we offer</p><h2 class="title rv">Every journey, handled.</h2>
+<p class="sub rv">From a quick airport drop to a week-long family tour, we make every kilometre smooth.</p>
+<div class="cards">
+<div class="card rv"><div class="ic">🛣️</div><h3>Outstation Trips</h3><p>One-way and round trips to Vizag, Hyderabad, Vijayawada and beyond with transparent pricing.</p></div>
+<div class="card rv"><div class="ic">✈️</div><h3>Airport Transfers</h3><p>Punctual pick-up and drop at Rajahmundry airport, with flight tracking.</p></div>
+<div class="card rv"><div class="ic">💍</div><h3>Weddings &amp; Events</h3><p>Decorated cars and fleet bookings for baraat, guests and family functions.</p></div>
+<div class="card rv"><div class="ic">🛕</div><h3>Temple Tours</h3><p>Annavaram, Antarvedi, Draksharamam and Konaseema pilgrimage packages.</p></div>
+</div></div></section>
+
+<section class="fleet" id="fleet"><div class="wrap">
+<p class="eyebrow rv">Our fleet</p><h2 class="title rv">Choose your ride.</h2>
+<p class="sub rv">Clean, AC, well-maintained cars driven by experienced local chauffeurs.</p>
+<div class="cards">
+<div class="card car rv"><div class="ic">🚗</div><h3>Swift Dzire</h3><p>Sedan · 4 seats · AC</p><div class="price">₹11/km <small>onwards</small></div></div>
+<div class="card car rv"><div class="ic">🚙</div><h3>Toyota Etios</h3><p>Sedan · 4 seats · Extra boot space</p><div class="price">₹12/km <small>onwards</small></div></div>
+<div class="card car rv"><div class="ic">🚐</div><h3>Innova Crysta</h3><p>SUV · 7 seats · Premium comfort</p><div class="price">₹18/km <small>onwards</small></div></div>
+<div class="card car rv"><div class="ic">🚌</div><h3>Tempo Traveller</h3><p>12–17 seats · Group travel</p><div class="price">₹25/km <small>onwards</small></div></div>
+</div></div></section>
+
+<section id="routes"><div class="wrap">
+<p class="eyebrow rv">Popular routes</p><h2 class="title rv">From Amalapuram to anywhere.</h2>
+<p class="sub rv">Fixed fares on the most-travelled routes. No hidden charges.</p>
+<div class="chips rv">
+<span class="chip">Rajahmundry<i>→</i></span><span class="chip">Kakinada<i>→</i></span><span class="chip">Visakhapatnam<i>→</i></span><span class="chip">Vijayawada<i>→</i></span><span class="chip">Hyderabad<i>→</i></span><span class="chip">Annavaram<i>→</i></span><span class="chip">Antarvedi<i>→</i></span><span class="chip">Bhimavaram<i>→</i></span>
+</div></div></section>
+
+<section class="book" id="book"><div class="wrap">
+<div><p class="eyebrow rv">Book now</p><h2 class="title rv">Your cab, in 60 seconds.</h2>
+<p class="sub rv" style="margin-bottom:0">Share your trip details and we'll confirm the fare on WhatsApp right away.</p>
+<div class="ct rv"><b>+91 00000 00000</b>Doorstep Pick-up · Available 24/7 · Amalapuram, Konaseema</div></div>
+<form class="rv" id="f">
+<input id="n" placeholder="Your name" required>
+<input id="p" placeholder="Phone number" inputmode="tel" required>
+<input id="a" placeholder="Pickup location" value="Amalapuram">
+<input id="b" placeholder="Drop location" required>
+<select id="c"><option>Swift Dzire</option><option>Toyota Etios</option><option>Innova Crysta</option><option>Tempo Traveller</option></select>
+<input id="d" type="date">
+<button class="btn" type="submit">Book on WhatsApp</button>
+</form></div></section>
+
+<footer><div class="wrap">© 2026 Konaseema Cab Travels, Amalapuram · Demo concept</div></footer>
+<a class="wa" href="https://wa.me/910000000000" aria-label="WhatsApp">💬</a>
+
+<script>
+var nav=document.getElementById('nav');
+addEventListener('scroll',function(){nav.classList.toggle('s',scrollY>40)});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%4)*90+'ms';io.observe(el)});
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,t=+el.dataset.n,c=0,s=Math.ceil(t/60);var id=setInterval(function(){c=Math.min(c+s,t);el.textContent=c.toLocaleString()+'+';if(c>=t)clearInterval(id)},25);so.unobserve(el)})});
+document.querySelectorAll('[data-n]').forEach(function(el){so.observe(el)});
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var g=function(i){return document.getElementById(i).value};
+var m='Hi, I want to book a cab.%0AName: '+encodeURIComponent(g('n'))+'%0APhone: '+encodeURIComponent(g('p'))+'%0AFrom: '+encodeURIComponent(g('a'))+'%0ATo: '+encodeURIComponent(g('b'))+'%0ACar: '+encodeURIComponent(g('c'))+'%0ADate: '+encodeURIComponent(g('d'));
+window.open('https://wa.me/910000000000?text='+m,'_blank')});
+</script>
+</body>
+</html>
